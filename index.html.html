@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Về GEMIN | Định hình Tương lai Giáo dục</title>
+    <!-- Google Fonts: Inter đồng bộ phong cách hiện đại -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2 family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- BRANDING DESIGN SYSTEM (UPDATED BASED ON USER IMAGES) --- */
+        :root {
+            --color-navy-brand: #1C355E;    /* Màu xanh bộ nhận diện GE */
+            --color-gold-brand: #C49A45;    /* Màu vàng gold bộ nhận diện MIN */
+            --color-blue-bright: #1D56DB;   /* Xanh hoàng gia từ Banner CTA */
+            --color-text-main: #1C355E;
+            --color-text-muted: #4A5D78;
+            --color-bg-white: #ffffff;
+            --color-border: rgba(28, 53, 94, 0.08);
+            --font-main: 'Inter', sans-serif;
+            --max-width: 1200px;
+            --border-radius-large: 32px;
+            --border-radius-card: 24px;
+            --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --shadow-premium: 0 10px 30px rgba(28, 53, 94, 0.04);
+            --shadow-hover: 0 20px 40px rgba(28, 53, 94, 0.08);
+
+            /* Gradient Pastel từ Ảnh số 2 */
+            --gradient-pastel-1: linear-gradient(135deg, #E3EDF7 0%, #FBF3D5 100%); /* Xanh - Vàng nhạt */
+            --gradient-pastel-2: linear-gradient(135deg, #E6E9FA 0%, #FCE7F3 100%); /* Tím - Hồng nhạt */
+            --gradient-pastel-3: linear-gradient(135deg, #E6F4EA 0%, #E8F0FE 100%); /* Lục - Lam nhạt */
+        }
+
+        /* --- GLOBAL STYLES --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-family: var(--font-main);
+            color: var(--color-text-main);
+            background-color: #FAFAFC;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        section {
+            padding: 100px 24px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: var(--max-width);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section-tag {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--color-navy-brand);
+            font-weight: 700;
+            margin-bottom: 14px;
+            display: inline-block;
+            background-color: rgba(28, 53, 94, 0.06);
+            padding: 6px 18px;
+            border-radius: 50px;
+        }
+
+        .section-title {
+            font-size: 36px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.3;
+            color: var(--color-navy-brand);
+        }
+
+        /* --- BUTTONS --- */
+        .btn-group {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .btn {
+            padding: 14px 32px;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: var(--transition-smooth);
+            display: inline-block;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: var(--color-navy-brand);
+            color: #ffffff;
+        }
+
+        .btn-primary:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            border: 1px solid rgba(28, 53, 94, 0.2);
+            color: var(--color-navy-brand);
+            background-color: var(--color-bg-white);
+        }
+
+        .btn-secondary:hover {
+            background-color: #F4F6F9;
+            transform: translateY(-2px);
+        }
+
+        /* --- HEADER NAVIGATION (EXACTLY AS IMAGE 3) --- */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--color-border);
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            padding: 18px 24px;
+        }
+
+        .nav-container {
+            width: 100%;
+            max-width: var(--max-width);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 26px;
+            letter-spacing: -0.03em;
+            text-decoration: none;
+            display: flex;
+        }
+
+        .logo .part-1 { color: var(--color-navy-brand); }
+        .logo .part-2 { color: var(--color-gold-brand); }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--color-text-main);
+            font-size: 15px;
+            font-weight: 600;
+            transition: var(--transition-smooth);
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            opacity: 0.7;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .btn-nav-login {
+            padding: 12px 28px;
+            font-size: 15px;
+            font-weight: 600;
+            text-decoration: none;
+            color: #000000;
+            border: 1px solid #E5E7EB;
+            border-radius: 50px;
+            background: #ffffff;
+            transition: var(--transition-smooth);
+        }
+
+        .btn-nav-login:hover {
+            background-color: #F9FAFB;
+        }
+
+        .btn-nav-cta {
+            padding: 12px 28px;
+            font-size: 15px;
+            font-weight: 600;
+            text-decoration: none;
+            color: #ffffff;
+            background-color: var(--color-navy-brand);
+            border-radius: 50px;
+            transition: var(--transition-smooth);
+        }
+
+        .btn-nav-cta:hover {
+            opacity: 0.9;
+        }
+
+        /* --- 1. HERO SECTION --- */
+        .hero {
+            padding-top: 180px;
+            padding-bottom: 100px;
+            background: linear-gradient(180deg, #F0F4F8 0%, #FAFAFC 100%);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 64px;
+            align-items: center;
+        }
+
+        .hero-title {
+            font-size: 48px;
+            font-weight: 800;
+            line-height: 1.2;
+            letter-spacing: -0.03em;
+            margin-bottom: 24px;
+            color: var(--color-navy-brand);
+        }
+
+        .hero-desc {
+            font-size: 16px;
+            color: var(--color-text-muted);
+            margin-bottom: 40px;
+            max-width: 540px;
+        }
+
+        .hero-image-area {
+            position: relative;
+            aspect-ratio: 1/1;
+            border-radius: var(--border-radius-card);
+            overflow: hidden;
+            box-shadow: var(--shadow-hover);
+        }
+
+        .hero-image-area img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* --- 2. OUR MISSION (PASTEL GRADIENTS FROM IMAGE 2) --- */
+        .mission {
+            background-color: #FAFAFC;
+        }
+
+        .mission-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+
+        .mission-card {
+            padding: 48px 36px;
+            border-radius: var(--border-radius-card);
+            box-shadow: var(--shadow-premium);
+            transition: var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.6);
+        }
+
+        .mission-card::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 50%;
+            top: 40px;
+            right: 30px;
+        }
+
+        .mission-card:nth-child(1) { background: var(--gradient-pastel-1); }
+        .mission-card:nth-child(2) { background: var(--gradient-pastel-2); }
+        .mission-card:nth-child(3) { background: var(--gradient-pastel-3); }
+
+        .mission-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .card-icon {
+            margin-bottom: 24px;
+            color: var(--color-navy-brand);
+            background: rgba(255, 255, 255, 0.6);
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--color-navy-brand);
+        }
+
+        .card-desc {
+            font-size: 14.5px;
+            color: var(--color-text-muted);
+            line-height: 1.6;
+        }
+
+        /* --- 3. OUR VISION --- */
+        .vision {
+            background-color: #ffffff;
+            border-radius: var(--border-radius-large);
+            margin: 0 24px;
+            border: 1px solid var(--color-border);
+        }
+
+        .vision-content {
+            max-width: 800px;
+            margin: 0 auto 64px auto;
+            text-align: center;
+            font-size: 16px;
+            color: var(--color-text-muted);
+        }
+
+        .timeline-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            position: relative;
+            margin-top: 48px;
+            gap: 40px;
+        }
+
+        .timeline-container::before {
+            content: '';
+            position: absolute;
+            top: 28px;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: var(--color-border);
+            z-index: 1;
+        }
+
+        .timeline-node {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .timeline-dot {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: var(--color-bg-white);
+            border: 1px solid var(--color-navy-brand);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px auto;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--color-navy-brand);
+            box-shadow: var(--shadow-premium);
+        }
+
+        .timeline-title {
+            font-size: 17px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--color-navy-brand);
+        }
+
+        /* --- 6. LEARNING PHILOSOPHY --- */
+        .philosophy-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            margin-bottom: 100px;
+        }
+
+        .philosophy-row:last-child { margin-bottom: 0; }
+        .philosophy-row.reverse { direction: rtl; }
+        .philosophy-row.reverse .philosophy-text-block { direction: ltr; }
+
+        .philosophy-image {
+            aspect-ratio: 16/11;
+            border-radius: var(--border-radius-card);
+            overflow: hidden;
+            box-shadow: var(--shadow-premium);
+        }
+
+        .philosophy-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .philosophy-h3 {
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--color-navy-brand);
+        }
+
+        .philosophy-p {
+            color: var(--color-text-muted);
+            font-size: 15px;
+        }
+
+        /* --- INSTRUCTORS SECTION --- */
+        .instructors {
+            background-color: #ffffff;
+        }
+
+        .instructors-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+
+        .instructor-card {
+            background: #ffffff;
+            border-radius: var(--border-radius-card);
+            border: 1px solid var(--color-border);
+            box-shadow: var(--shadow-premium);
+            transition: var(--transition-smooth);
+            text-align: center;
+            padding: 40px 24px;
+        }
+
+        .instructor-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .avatar-container {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 24px auto;
+        }
+
+        .instructor-avatar {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .instructor-name {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--color-navy-brand);
+            margin-bottom: 6px;
+        }
+
+        .instructor-role {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--color-gold-brand);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 16px;
+            display: inline-block;
+        }
+
+        .instructor-bio {
+            font-size: 14px;
+            color: var(--color-text-muted);
+            line-height: 1.6;
+        }
+
+        /* --- 8. OUR PARTNERS --- */
+        .partner-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 24px;
+            align-items: center;
+            margin-top: 48px;
+        }
+
+        .partner-logo-box {
+            height: 64px;
+            border: 1px solid var(--color-border);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--color-text-muted);
+            background-color: var(--color-bg-white);
+            opacity: 0.7;
+        }
+
+        /* --- 9. CALL TO ACTION (EXACTLY AS IMAGE 1) --- */
+        .cta-section {
+            padding: 80px 60px;
+            background-color: var(--color-blue-bright);
+            color: #ffffff;
+            border-radius: var(--border-radius-card);
+            margin: 40px 24px;
+            box-shadow: 0 15px 40px rgba(29, 86, 219, 0.2);
+        }
+
+        .cta-container-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .cta-text-side {
+            text-align: left;
+            max-width: 75%;
+        }
+
+        .cta-section .section-tag {
+            background-color: rgba(255, 255, 255, 0.15);
+            color: #ffffff;
+            font-size: 11px;
+            margin-bottom: 16px;
+        }
+
+        .cta-section .section-title {
+            font-size: 38px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 12px;
+            letter-spacing: -0.01em;
+        }
+
+        .cta-section p {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 15px;
+            max-width: 680px;
+        }
+
+        .cta-btn-white {
+            background-color: #ffffff;
+            color: #000000;
+            padding: 16px 36px;
+            font-size: 15px;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 50px;
+            white-space: nowrap;
+            transition: var(--transition-smooth);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        .cta-btn-white:hover {
+            background-color: #F9FAFB;
+            transform: scale(1.02);
+        }
+
+        /* --- GLOBAL FOOTER COMPONENT --- */
+        footer {
+            background-color: var(--color-navy-brand);
+            color: rgba(255, 255, 255, 0.6);
+            padding: 50px 24px;
+            font-size: 14px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .footer-container {
+            width: 100%;
+            max-width: var(--max-width);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-left strong { color: #ffffff; }
+
+        /* --- ANIMATIONS --- */
+        [data-fade] {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        [data-fade].visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- RESPONSIVE STYLES --- */
+        @media (max-width: 1024px) {
+            .mission-grid, .instructors-grid { grid-template-columns: repeat(2, 1fr); }
+            .partner-grid { grid-template-columns: repeat(3, 1fr); }
+            .cta-container-flex { flex-direction: column; text-align: center; gap: 32px; }
+            .cta-text-side { max-width: 100%; text-align: center; }
+        }
+
+        @media (max-width: 768px) {
+            section { padding: 70px 24px; }
+            .hero-grid, .philosophy-row, .philosophy-row.reverse {
+                grid-template-columns: 1fr; gap: 40px; direction: ltr;
+            }
+            .philosophy-row.reverse .philosophy-text-block { direction: ltr; }
+            .mission-grid, .timeline-container, .instructors-grid { grid-template-columns: 1fr; }
+            .timeline-container::before { display: none; }
+            .hero-title { font-size: 34px; }
+            .nav-links, .nav-actions { display: none; }
+            .vision, .cta-section { margin: 0 0 20px 0; border-radius: 20px; padding: 40px 24px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- GLOBAL HEADER NAVIGATION (CHÍNH XÁC THEO ẢNH 3) -->
+    <header>
+        <div class="nav-container">
+            <a href="#hero" class="logo">
+                <span class="part-1">GE</span><span class="part-2">MIN</span>
+            </a>
+            
+            <nav class="nav-links">
+                <a href="#hero" class="active">Giới thiệu</a>
+                <a href="#hero">Khóa học</a>
+                <a href="#hero">Tài nguyên</a>
+                <a href="#hero">Tài khoản</a>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="#hero" class="btn-nav-login">Đăng nhập</a>
+                <a href="#hero" class="btn-nav-cta">Khám phá khóa học</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 1. HERO SECTION -->
+    <section class="hero" id="hero">
+        <div class="container hero-grid">
+            <div class="hero-text-area" data-fade>
+                <span class="section-tag">Về chúng tôi</span>
+                <h1 class="hero-title">Định hình Tương lai Giáo dục: Nâng tầm Nội lực.</h1>
+                <p class="hero-desc">GEMIN là nền tảng giáo dục chuyên sâu, đồng hành cùng các nhà giáo dục và người học trọn đời trên hành trình kiến tạo những giá trị tri thức bền vững.</p>
+                <div class="btn-group">
+                    <a href="#cta" class="btn btn-primary">Khám phá khóa học</a>
+                    <a href="#cta" class="btn btn-secondary">Tìm hiểu giải pháp</a>
+                </div>
+            </div>
+            <div class="hero-image-area" data-fade>
+                <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=cover&q=80&w=800" alt="GEMIN Premium Education Space">
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. OUR MISSION (THẺ GRADIENT PASTEL THEO ẢNH 2) -->
+    <section class="mission">
+        <div class="container">
+            <div class="section-header" data-fade>
+                <span class="section-tag">Sứ mệnh</span>
+                <h2 class="section-title">Kiến tạo hệ sinh thái giáo dục chuẩn mực</h2>
+            </div>
+            <div class="mission-grid">
+                <div class="mission-card" data-fade>
+                    <div class="card-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 22h20L12 2zM12 18v-4"/></svg>
+                    </div>
+                    <h3 class="card-title">Nâng tầm đội ngũ</h3>
+                    <p class="card-desc">Đồng hành và trang bị cho đội ngũ giáo viên những phương pháp sư phạm tiên tiến, công cụ hiện đại và tư duy giáo dục toàn cầu.</p>
+                </div>
+                <div class="mission-card" data-fade>
+                    <div class="card-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg>
+                    </div>
+                    <h3 class="card-title">Bình đẳng giáo dục</h3>
+                    <p class="card-desc">Xóa bỏ rào cản về địa lý và cơ hội tiếp cận, mang những chương trình đào tạo chuẩn quốc tế tinh hoa nhất đến với người học.</p>
+                </div>
+                <div class="mission-card" data-fade>
+                    <div class="card-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><path d="M9 9h6v6H9z"/></svg>
+                    </div>
+                    <h3 class="card-title">Phát triển trọn đời</h3>
+                    <p class="card-desc">Xây dựng tư duy học tập chủ động và liên tục. GEMIN cung cấp bệ phóng để mỗi cá nhân không ngừng tự hoàn thiện bản thân.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. OUR VISION -->
+    <section class="vision">
+        <div class="container">
+            <div class="section-header" data-fade>
+                <span class="section-tag">Tầm nhìn</span>
+                <h2 class="section-title">Tầm nhìn chiến lược</h2>
+            </div>
+            <div class="vision-content" data-fade>
+                Đến năm 2030, GEMIN định vị trở thành hệ sinh thái giáo dục và chuyển đổi số sư phạm uy tín hàng đầu khu vực, nơi hội tụ của những bộ óc giáo dục xuất sắc.
+            </div>
+            <div class="timeline-container">
+                <div class="timeline-node" data-fade>
+                    <div class="timeline-dot">24-25</div>
+                    <h4 class="timeline-title">Chuẩn hóa hệ thống</h4>
+                    <p class="card-desc">Tập trung nghiên cứu, thiết kế nội dung đạt chuẩn mực cao.</p>
+                </div>
+                <div class="timeline-node" data-fade>
+                    <div class="timeline-dot">26-28</div>
+                    <h4 class="timeline-title">Mở rộng hệ sinh thái</h4>
+                    <p class="card-desc">Liên kết sâu rộng công nghệ EdTech và mạng lưới đối tác toàn cầu.</p>
+                </div>
+                <div class="timeline-node" data-fade>
+                    <div class="timeline-dot">2030</div>
+                    <h4 class="timeline-title">Dẫn dắt chuyển đổi</h4>
+                    <p class="card-desc">Trở thành biểu tượng chuyển đổi số giáo dục xuất sắc.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. LEARNING PHILOSOPHY -->
+    <section class="philosophy">
+        <div class="container">
+            <div class="section-header" data-fade>
+                <span class="section-tag">Phương pháp luận</span>
+                <h2 class="section-title">Triết lý Giáo dục chuyên sâu</h2>
+            </div>
+            
+            <div class="philosophy-row">
+                <div class="philosophy-text-block" data-fade>
+                    <h3 class="philosophy-h3">Học qua trải nghiệm (Learn by Doing)</h3>
+                    <p class="philosophy-p">Tri thức chỉ thực sự trở thành năng lực hành vi khi nó được thử nghiệm và chuyển hóa qua hành động thực tế. Tại GEMIN, 70% thời lượng chương trình được thiết kế cho thực hành giả lập.</p>
+                </div>
+                <div class="philosophy-image" data-fade>
+                    <img src="https://images.unsplash.com/photo-1531538606174-0f90ff5dce83?auto=format&fit=cover&q=80&w=800" alt="Interactive Corporate Learning">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ĐỘI NGŨ GIẢNG VIÊN -->
+    <section class="instructors" id="instructors">
+        <div class="container">
+            <div class="section-header" data-fade>
+                <span class="section-tag">Chuyên gia dẫn dắt</span>
+                <h2 class="section-title">Đội ngũ Giảng viên Xuất sắc</h2>
+            </div>
+            <div class="instructors-grid">
+                <div class="instructor-card" data-fade>
+                    <div class="avatar-container">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=cover&q=80&w=400" alt="Dr. Minh An" class="instructor-avatar">
+                    </div>
+                    <h3 class="instructor-name">PGS. TS. Lê Minh An</h3>
+                    <span class="instructor-role">Giám đốc Học thuật</span>
+                    <p class="instructor-bio">Hơn 15 năm nghiên cứu phương pháp luận giáo dục tại ĐH Oxford. Chuyên gia cố vấn chương trình đào tạo.</p>
+                </div>
+                <div class="instructor-card" data-fade>
+                    <div class="avatar-container">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=cover&q=80&w=400" alt="Ths. Hoàng Nam" class="instructor-avatar">
+                    </div>
+                    <h3 class="instructor-name">Ths. Nguyễn Hoàng Nam</h3>
+                    <span class="instructor-role">Chuyên gia EdTech</span>
+                    <p class="instructor-bio">Nguyên Trưởng bộ phận Trải nghiệm người dùng tại các tập đoàn lớn. Tiên phong ứng dụng AI vào học tập.</p>
+                </div>
+                <div class="instructor-card" data-fade>
+                    <div class="avatar-container">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=cover&q=80&w=400" alt="Dr. Elana Trịnh" class="instructor-avatar">
+                    </div>
+                    <h3 class="instructor-name">Dr. Elena Trịnh</h3>
+                    <span class="instructor-role">Giảng viên Cao cấp</span>
+                    <p class="instructor-bio">Tiến sĩ Tâm lý học hành vi Giáo dục từ ĐH Stanford. Chuyên sâu về phát triển năng lực tư duy phản biện.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. OUR PARTNERS -->
+    <section class="partners">
+        <div class="container">
+            <div class="section-header" data-fade>
+                <span class="section-tag">Mạng lưới tin cậy</span>
+                <h2 class="section-title">Đối tác chiến lược</h2>
+            </div>
+            <div class="partner-grid">
+                <div class="partner-logo-box" data-fade>HARVARD L.X</div>
+                <div class="partner-logo-box" data-fade>OXFORD ED</div>
+                <div class="partner-logo-box" data-fade>STANFORD CO</div>
+                <div class="partner-logo-box" data-fade>MIT TECH</div>
+                <div class="partner-logo-box" data-fade>CAMBRIDGE</div>
+                <div class="partner-logo-box" data-fade>YALE G.H</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. CALL TO ACTION (BẢN UPDATE THEO ẢNH 1 - ĐÚNG BANNER XANH ĐẬM & NÚT TRẮNG) -->
+    <section class="cta-section" id="cta">
+        <div class="container cta-container-flex" data-fade>
+            <div class="cta-text-side">
+                <span class="section-tag">Bắt đầu cùng GEMIN</span>
+                <h2 class="section-title">Sẵn sàng nâng cấp năng lực giảng dạy?</h2>
+                <p>Khám phá các khóa học dành riêng cho giáo viên và xây dựng lộ trình phát triển chuyên môn phù hợp.</p>
+            </div>
+            <a href="#hero" class="cta-btn-white">Khám phá khóa học</a>
+        </div>
+    </section>
+
+    <!-- GLOBAL FOOTER COMPONENT -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-left">
+                <strong>GEMIN EDUCATION</strong> HUB &copy; 2026. All rights reserved.
+            </div>
+            <div class="footer-right">
+                Tiêu chuẩn giáo dục quốc tế — Kiến tạo tri thức bền vững.
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTION SCRIPT -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const fadeElements = document.querySelectorAll('[data-fade]');
+            const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+            fadeElements.forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>
